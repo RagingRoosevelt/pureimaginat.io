@@ -68,6 +68,7 @@ function newZ(z, c) {
 
 function drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations) {
     console.log(canvas.width + "x" + canvas.height + " started (radius=" + radiusConvergence + ", maxIter=" + maxIterations + ")...");
+    $("#status").html("Working on " + canvas.width + "x" + canvas.height + " started (radius=" + radiusConvergence + ", maxIter=" + maxIterations + ")...");
 
     var preCanvas = document.createElement('canvas');
     preCanvas.width = canvas.width;
@@ -104,9 +105,11 @@ function drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations) {
     console.log("\t ... done");
                    
     if (canvas.width < $(window).width() && true) {
-        setTimeout(function() { canvas.width *= 2; canvas.height *= 2; drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations); }, 1000);
+        setTimeout(function() { canvas.width *= 2; canvas.height *= 2; drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations); }, 10);
     } else if (maxIterations < 100) {
-        setTimeout(function() { drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations + 5); }, 1000);
+        setTimeout(function() { drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations + 5);}, 10);
+    } else {
+        $("#status").html("done");
     }
 }
 
