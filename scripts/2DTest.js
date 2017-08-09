@@ -105,8 +105,8 @@ function drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations) {
                    
     if (canvas.width < $(window).width() && true) {
         setTimeout(function() { canvas.width *= 2; canvas.height *= 2; drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations); }, 1000);
-    } else if (maxIterations < 30) {
-        setTimeout(function() { canvas.width *= 2; canvas.height *= 2; drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations + 5); }, 1000);
+    } else if (maxIterations < 100) {
+        setTimeout(function() { drawMandlebrot(ctx, viewRange, radiusConvergence, maxIterations + 5); }, 1000);
     }
 }
 
