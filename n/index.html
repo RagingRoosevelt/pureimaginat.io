@@ -1,24 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon"
-          type="/image/png"
-          href="/assets/favicon64.png">
-    <link rel="stylesheet"
-          type="text/css"
-          href="/styles/master.css">
-    <meta charset="UTF-8">
-    <title>Pure Imagination</title>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="fractal.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="fractal.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="/scripts/jquery-3.1.1.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/infusion/Complex.js/master/complex.min.js"></script>
-<script type="text/javascript" src="/scripts/2DTest.js"></script>
-
-<canvas id="canvas">Your browser does not support HTML5 canvas!</canvas>
-<div style="z-index: 10; position: fixed; top: 0; left: 0;" id="status">
-
-</div>
-
+<canvas id="c" width="calc(100vw)" height="calc(100vh)" style="height: 100vh; width: 100vw;"></canvas>
 </body>
-</html>
